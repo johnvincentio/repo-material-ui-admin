@@ -1,11 +1,10 @@
-
 import { createStore, applyMiddleware, compose } from 'redux';
 // import { responsiveStoreEnhancer } from 'redux-responsive';
 import { persistState } from 'redux-devtools';
 
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
-import DevTools from '../containers/DevTools';
+import DevTools from '../root/DevTools';
 
 const configureStore = (initialState = {}) => {
 	const middleware = [thunk];
@@ -13,7 +12,7 @@ const configureStore = (initialState = {}) => {
 		// responsiveStoreEnhancer,
 		applyMiddleware(...middleware),
 		DevTools.instrument(),
-		persistState(window.location.href.match(/[?&]debug_session=([^&#]+)\b/)),
+		persistState(window.location.href.match(/[?&]debug_session=([^&#]+)\b/))
 	);
 	const store = createStore(rootReducer, initialState, enhancers);
 	return store;

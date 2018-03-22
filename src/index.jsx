@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
 
 import configureStore from './store/configureStore';
-import Root from './containers/Root';
+import Root from './root/Root';
 
 const store = configureStore();
 

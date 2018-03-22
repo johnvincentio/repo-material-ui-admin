@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
@@ -6,12 +5,14 @@ import { Switch, Route } from 'react-router-dom';
 
 import DevTools from './DevTools';
 
-import App from '../components/App';
-import NotFoundPage from '../components/NotFoundPage';
+import App from '../containers/App';
+import NotFoundPage from '../containers/NotFoundPage';
 
 const Root = ({ store }) => (
 	<Provider store={store}>
-		<div>		{/* comment */}
+		<div>
+			{' '}
+			{/* comment */}
 			<Switch>
 				<Route path="/" component={App} />
 				<Route component={NotFoundPage} />
@@ -24,7 +25,7 @@ const Root = ({ store }) => (
 );
 
 Root.propTypes = {
-	store: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+	store: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
 };
 
 export default Root;

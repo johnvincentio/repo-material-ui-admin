@@ -1,14 +1,13 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 
 // eslint-disable-next-line import/no-named-as-default
-import App from '../components/App';
-import NotFoundPage from '../components/NotFoundPage';
+import App from '../containers/App';
+import NotFoundPage from '../containers/NotFoundPage';
 
-const Root = (props) => {
+const Root = props => {
 	const { store } = props;
 	return (
 		<Provider store={store}>
@@ -23,7 +22,7 @@ const Root = (props) => {
 };
 
 Root.propTypes = {
-	store: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+	store: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
 };
 
 export default Root;
